@@ -27,7 +27,6 @@ public class ConnectionFactory {
                         String dbUrl = prop.getProperty("db.url");
                         String dbUser = prop.getProperty("db.user");
                         String dbPwd = prop.getProperty("db.pwd");
-                        System.out.println(dbDriver);
                         Class.forName(dbDriver);
                         return DriverManager.getConnection(dbUrl, dbUser,dbPwd);
                         

@@ -5,11 +5,12 @@
  */
 package classes;
 
-import bancoDeDados.ConnectionFactory;
+import DAO.VeiculoDAO;
+import enums.Categoria;
+import enums.Estado;
+import enums.Marca;
+import enums.ModeloAutomovel;
 import java.io.IOException;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -17,15 +18,12 @@ import java.util.logging.Logger;
  */
 public class TestaClasses {
         
-        public static void main(String[] args){
-                ConnectionFactory con = new ConnectionFactory();
-                try {
-                        con.getConnection();
-                } catch (IOException ex) {
-                        Logger.getLogger(TestaClasses.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (SQLException ex) {
-                        Logger.getLogger(TestaClasses.class.getName()).log(Level.SEVERE, null, ex);
-                }
+        public static void main(String[] args) throws IOException{
+                VeiculoDAO veiculo = new VeiculoDAO();
+                Veiculo carro = new Automovel(Marca.VW, Estado.NOVO, null, Categoria.INTERMEDIARIO, 60.000, "AFG5478", 2014, ModeloAutomovel.GOLF);
+                veiculo.criaVeiculo(carro);
+                String classe = carro.getClass().toString();
+                String quebrado[] = classe.split("\\.");
         }
         
 }
