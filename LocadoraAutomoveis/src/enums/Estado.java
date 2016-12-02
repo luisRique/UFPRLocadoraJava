@@ -5,6 +5,10 @@
  */
 package enums;
 
+import java.util.ArrayList;
+import java.util.EnumSet;
+import java.util.List;
+
 /**
  *
  * @author luis
@@ -12,5 +16,15 @@ package enums;
 public enum Estado {
         
         VENDIDO, DISPONIVEL, LOCADO, NOVO;
+        
+           public static Estado getEstado(String estado) {
+                List<Estado> listaEstado = new ArrayList<Estado>(EnumSet.allOf(Estado.class));
+                for (Estado est : listaEstado) {
+                        if (est.name().equals(estado)) {
+                                return est;
+                        }
+                }
+                return null;
+        }
         
 }
