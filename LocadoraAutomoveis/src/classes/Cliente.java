@@ -1,11 +1,12 @@
 package classes;
 
 public class Cliente {
-    public String nome;
-    public String sobrenome;
-    public String rg;
-    public String cpf;
-    public String endereco;
+    private int idCliente;
+    private String nome;
+    private String sobrenome;
+    private String rg;
+    private String cpf;
+    private String endereco;
 
     public String getNome() {
         return nome;
@@ -45,6 +46,14 @@ public class Cliente {
 
     public void setEndereco(String endereco) {
         this.endereco = endereco;
+    }
+
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
+    }
+
+    public int getIdCliente() {
+        return idCliente;
     }
 
 
