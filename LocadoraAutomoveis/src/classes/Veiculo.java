@@ -36,7 +36,7 @@ public abstract class Veiculo implements VeiculoI {
                 }
                 this.categoria = categoria;
                 this.valorDeCompra = valorDeCompra;
-                this.placa = placa;
+                this.placa = placa.toUpperCase();
                 this.ano = ano;
         }
 
